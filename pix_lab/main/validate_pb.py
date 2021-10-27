@@ -11,7 +11,7 @@ from pix_lab.util.validator_pb import Validator_pb
 @click.option('--restore_pb_path', default="./demo_nets/model100_ema.pb")
 def run(path_list_val, restore_pb_path):
     n_class = 3
-    kwargs_dat=dict(scale_val=0.33, one_hot_encoding=True, shuffle=False)
+    kwargs_dat=dict(scale_val=1.0, one_hot_encoding=True, shuffle=False)
     data_provider = Data_provider_la(None, path_list_val, n_class, kwargs_dat=kwargs_dat)
     cost_kwargs = dict(cost_name="cross_entropy")
     validator = Validator_pb(restore_pb_path, n_class=n_class, cost_kwargs=cost_kwargs)

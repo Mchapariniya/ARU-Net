@@ -63,7 +63,7 @@ class Inference_pb(object):
                         else:
                             a = fig.add_subplot(1, n_class+1, aI+1)
                             plt.imshow(aPred[0,:, :,aI-1], cmap=plt.cm.gray, vmin=0.0, vmax=1.0)
-                            # misc.imsave('out' + str(aI) + '.jpg', aPred[0,:, :,aI-1])
+                            misc.imsave('out' + str(aI) + '.jpg', aPred[0,:, :,aI-1])
                             a.set_title('Channel: ' + str(aI-1))
                     print('To go on just CLOSE the current plot.')
                     plt.show()
