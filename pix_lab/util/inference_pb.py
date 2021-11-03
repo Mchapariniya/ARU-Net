@@ -28,7 +28,7 @@ class Inference_pb(object):
             predictor = self.graph.get_tensor_by_name('output:0') 
             batch_x = self.load_img(self.image, self.scale)
             pred = sess.run(predictor, feed_dict={x: batch_x})
-            return pred[0,:, :,2]
+            return pred[0,:, :,0]
 
     def load_img(self, image, scale):
         sImg = misc.imresize(image, scale, interp='bicubic')
